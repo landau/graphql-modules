@@ -4,7 +4,12 @@ export const UserModule = createModule({
   id: 'user',
   dirname: __dirname,
   typeDefs: gql`
-    type User {
+    interface User {
+      id: String
+      username: String
+    }
+
+    type CommonUser implements User {
       id: String
       username: String
     }
